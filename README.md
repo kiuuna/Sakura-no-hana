@@ -7,6 +7,7 @@
   - [See whats happening behind-the-scenes](https://github.com/kiuuna/Sakura-no-hana)
   - [Issue a bug report](https://github.com/kiuuna/Sakura-no-hana/issues)
   - [Request a specific feature](https://github.com/kiuuna/Sakura-no-hana/issues)
+  - Do anything the project [license](./LICENSE) allows you to
   
 ### Built With
   - [**discord.js**](https://discord.js.org/#/)
