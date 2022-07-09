@@ -28,6 +28,6 @@ module.exports = {
             embeds: [embed]
         })
 
-        await interaction.reply({ content: "Sent webhook message", ephemeral: true })
+        await interaction.reply({ content: "Sent webhook message", ephemeral: true });
     }
 }
