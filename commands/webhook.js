@@ -3,15 +3,15 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('webhook')
-        .setDescription('Creates a webhook of your message.')
+        .setName("webhook")
+        .setDescription("Creates a webhook of your message.")
         .setDMPermission(false)
-        .addStringOption(message => message.setName('message').setDescription("The message you want to embed.").setRequired(true)),
+        .addStringOption(message => message.setName("message").setDescription("The message you want to embed.").setRequired(true)),
     async execute(interaction, client) {
         const id = interaction.channelId;
         const channel = client.channels.cache.get(id);
 
-        const message = interaction.options.getString('message');
+        const message = interaction.options.getString("message");
 
         const webhooks = await channel.fetchWebhooks();
         const webhook = webhooks.find(wh => wh.token);
