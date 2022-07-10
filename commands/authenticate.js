@@ -26,10 +26,8 @@ module.exports = {
         const collector = interaction.channel.createMessageComponentCollector({ componentType: "BUTTON" });
 
         collector.on("collect", i => {
-            if (i.user.id === interaction.user.id) {
                 i.member.roles.add(role);
                 i.reply({ content: `<@${i.user.id}>, you have successfully authenticated your account.`, ephemeral: true });
-            }
         });
 
         collector.on("end", collected => {
