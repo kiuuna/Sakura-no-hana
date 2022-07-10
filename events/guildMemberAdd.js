@@ -55,7 +55,6 @@ module.exports = {
         // });
         // new_verification.save();
 
-        // Available gifs *will change this sytem later — which btw means most likely never*
         let gifs = [
             'https://c.tenor.com/JlJ5H9ItRCIAAAAC/toradora-taiga-aisaka.gif',
             'https://c.tenor.com/4gwqAPkyvrwAAAAd/white-queen-date-a-live.gif',
@@ -63,7 +62,7 @@ module.exports = {
             'https://c.tenor.com/Yoitobm0iaQAAAAd/date-a-live-kurumi.gif'
         ]
 
-        // Select random gif from the array \(-_o)/
+        // Select random gif from the array
         let gif = gifs[Math.floor(Math.random() * gifs.length)];
 
         const webhooks = await channel.fetchWebhooks();
