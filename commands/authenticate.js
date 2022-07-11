@@ -13,7 +13,12 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor("#2F3136")
             .setTitle("Authenticate your account")
-            .setDescription("Click the button below to gain access to the rest of the server.");
+            .setDescription("Click the `Authenticate` button below to gain access to the rest of the server.")
+            .addFields(
+                { name: "", value: "", inline: true },
+                { name: "", value: "", inline: true }
+            )
+            .setFooter();
 
         const row = new MessageActionRow()
             .addComponents(
@@ -21,6 +26,10 @@ module.exports = {
                     .setCustomId("authenticate_button")
                     .setLabel("Authenticate")
                     .setStyle("PRIMARY"),
+                new MessageButton()
+                    .setURL("https://github.com/kiuuna/Sakura-no-hana#about")
+                    .setLabel("Learn More")
+                    .setStyle("LINK"),
             )
 
         const collector = interaction.channel.createMessageComponentCollector({ componentType: "BUTTON" });
@@ -30,9 +39,10 @@ module.exports = {
                 i.reply({ content: `<@${i.user.id}>, you have successfully authenticated your account.`, ephemeral: true });
         });
 
-        collector.on("end", collected => {
-            console.log(`Collected ${collected.size} interactions.`);
-        });
+        // Probably useless?
+        // collector.on("end", collected => {
+        //     console.log(`Collected ${collected.size} interactions.`);
+        // });
 
         channel.send({ embeds: [embed], components: [row] });
         await interaction.reply({ content: "Successfully executed this command.", ephemeral: true });
